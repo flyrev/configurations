@@ -1,6 +1,6 @@
-    (setq auto-mode-alist (append '(("\\.pl$" . prolog-mode)
-                                    ("\\.m$" . mercury-mode))
-                                   auto-mode-alist))
+(setq auto-mode-alist (append '(("\\.pl$" . prolog-mode)
+				("\\.m$" . mercury-mode))
+			      auto-mode-alist))
 (require 'python)
 
 (setq cpp-indent-level 8)

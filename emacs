@@ -1,6 +1,9 @@
 (global-set-key '[M-kp-0 M-kp-6 M-kp-0] '(lambda () (interactive)(insert "<")))
 (global-set-key '[M-kp-0 M-kp-6 M-kp-2] '(lambda () (interactive)(insert ">")))
 
+(defun insert-lt () (interactive)(insert "<"))
+(defun insert-gt () (interactive)(insert ">"))
+
 
 (setq cpp-indent-level 8)
 (setq cpp-basic-offset 8)

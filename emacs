@@ -4,6 +4,7 @@
 (defun insert-lt () (interactive)(insert "<"))
 (defun insert-gt () (interactive)(insert ">"))
 
+(defun insert-ggg () (interactive)(insert "<>"))
 
 (setq cpp-indent-level 8)
 (setq cpp-basic-offset 8)
@@ -13,10 +14,6 @@
 
 ;; Disable startup message.
 (setq inhibit-startup-message t)
-
-
-
-
 
 ;; Use y-or-n-p for query prompts instead of yes-or-no-p.
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -184,7 +181,7 @@
 )
 
 
-(setq split-height-threshold nil)
+(setq split-height-threshold 0)
 (setq split-width-threshold 0)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -207,24 +204,6 @@
          (cons 'height (/ (- (x-display-pixel-height) 200)
                              (frame-char-height)))))))
 
-(set-frame-size-according-to-resolution)
-(w32-send-sys-command 61488)
-
-(defun jbr-init ()
-  "Called from term-setup-hook after the default
-terminal setup is
-done or directly from startup if term-setup-hook not
-used.  The value
-0xF030 is the command for maximizing a window."
-  (interactive)
-  (w32-send-sys-command #xf030)
-  (ecb-redraw-layout)
-  (calendar)
-)
-(setq term-setup-hook 'jbr-init)
-(setq window-setup-hook 'jbr-init)
-
-
 (setq tex-command "pdflatex")
 (setq latex-run-command "pdflatex")
 
@@ -232,8 +211,8 @@ used.  The value
 
 (setq auto-mode-alist (cons '("\\.rc" . c-mode) auto-mode-alist))
 
-(load "~/configurations/haskell-mode/haskell-mode.el")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+; (load "~/configurations/haskell-mode/haskell-mode.el")
+; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 
